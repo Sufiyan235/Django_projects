@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<html>
+<head>
+    <title>Stident Management System </title>
+
+</head>
+
+<body>
+<center><h1> Employee Management System</h1></center>
+<center><h2> List of Employees </h2></center>
+
+<div class='container'>
+    <div class='row'>
+        <div class='col-md-12'>
+            <div class='card'>
+                <div class='card-body'>
+                    <table class='table table-striped'>
+                        <thead>
+                            <tr>
+                                <th>SR.NO</th>
+                                <th>Employee ID </th>
+                                <th>Name </th>
+                                <th>Designation </th>
+                                <th>Email </th>
+                                <th>Date Joined </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for emp in all_emp %}
+                            <tr>
+                                <td>{{forloop.counter}}</td>
+                                <td>{{emp.Emp_id}}</td>
+                              <td><a href="{% url 'details' emp.id %}">{{emp.Name}}</a></td>
+                                <td>{{emp.Position}}</td>
+                                <td>{{emp.Email}}</td>
+                                <td>{{emp.Joining_Date}}</td>
+                                <td>
+                                <a href="{% url 'delete_emp' emp.id %}" class='btn btn-danger md-sm'>Delete</a>
+                                <a href="{% url 'update_emp' emp.id %}" class='btn btn-success md-sm'>Update</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

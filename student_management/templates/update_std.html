@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<html>
+<head>
+    <title>Student Management System </title>
+
+</head>
+
+<body>
+<center><h1 class='my-3'> Update Student </h1></center>
+    <div class='container'>
+        <div class='row'>
+            <div class="col-md-12">
+                <div class='card bg-info'>
+                    <div class='class-body'>
+                        <form action="{% url 'do_update' student.Roll %}" method="POST" style='padding:5px 10px 5px 10px'>
+                            {% csrf_token %}
+                            <div class='md-3'>
+                                <label for='roll'>Roll No : </label>
+                                <input type='text' id='roll' name='roll' class='form-control' placeholder='Enter Your Roll No' required value='{{student.Roll}}'>
+                            </div>
+
+                            <div class='md-3'>
+                                <label for='name'>Name : </label>
+                                <input type='text' id='name' name='name' class='form-control' placeholder='Enter Your Name' required value="{{student.Name}}">
+                            </div>
+
+                            <div class='md-3'>
+                                <label for='email'>Email : </label>
+                                <input type='email' id='email' name='email' class='form-control' placeholder='Enter Your Email' required value="{{student.Email}}">
+                            </div>
+
+                            <div class='md-3'>
+                                <label for='address'>Address : </label>
+                                <textarea id='address' name='address' rows='5' class='form-control' placeholder='Enter Your Address' value="{{student.Address}}"></textarea>
+                            </div>
+
+                             <div class='md-3'>
+                                <label for='phone'>Phone : </label>
+                                <input type='text' id='phone' name='phone' class='form-control' placeholder='Enter Your Phone Number' value="{{student.Phone}}">
+                            </div>
+
+                            <div class='container  text-center my-3'>
+                                <button class='btn btn-success'>
+                                    Update Student
+                                </button>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+</html>
+
+{% endblock %}

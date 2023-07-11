@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<html>
+<head>
+    <title>Stident Management System </title>
+
+</head>
+
+<body>
+<center><h1> Student Management </h1></center>
+<center><h2> List of Students </h2></center>
+<div class='container'>
+    <div class='row'>
+        <div class='col-md-12'>
+            <div class='card'>
+                <div class='card-body'>
+                    <table class='table table-striped'>
+                        <thead>
+                            <tr>
+                                <th>SR.NO</th>
+                                <th>Roll No </th>
+                                <th>Name </th>
+                                <th>Email </th>
+                                <th>Address </th>
+                                <th>Phone </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for student in students %}
+                            <tr>
+                                <td>{{forloop.counter}}</td>
+                                <td>{{student.Roll}}</td>
+                                <td>{{student.Name}}</td>
+                                <td>{{student.Email}}</td>
+                                <td>{{student.Address}}</td>
+                                <td>{{student.Phone}}</td>
+                                <td>
+                                <a href="{% url 'delete_std' student.Roll %}" class='btn btn-danger md-sm'>Delete</a>
+                                <a href="{% url 'update_std' student.Roll %}" class='btn btn-success md-sm'>Update</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+{% endblock %}
