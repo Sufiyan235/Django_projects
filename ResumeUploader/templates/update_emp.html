@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class='container'>
+    <div class='row'>
+        <dic class='col-md-12'>
+            <div class='card'>
+                <div class='card-body'>
+                    <form action="{% url 'do_update_emp' emp.id %}" method="POST" enctype="multipart/form-data" style='padding:5px 10px 5px 10px' >
+                        {% csrf_token %}
+
+                        <div class='md-3'>
+                            <label for='roll'>Employee Name : </label>
+                            <input type='text'  name='name' class='form-control' value={{emp.Name}} required><br>
+                        </div>
+
+                        <div class='md-3'>
+                            <label for='name'>Date of Birth : </label>
+                            <input type='date' name='dob' class='form-control' value={{emp.DOB}}  required><br>
+                        </div>
+
+                        <div class='md-3'>
+                            <label for='email'>Email : </label>
+                            <input type='email' id='email' name='email' class='form-control' value={{emp.Email}} required><br>
+                        </div>
+
+                        <div class='md-3'>
+                            <img src="{{emp.Profile_Photo.url}}" class="img-thumbnail">
+                            <div>
+                                <label>Upload new image</label>
+                                <input type='file' name='photo'>
+                            </div>
+                        </div>  
+
+
+                        <div class='md-3'>
+                            <label for='phone'>Gender : </label>
+                            <input type='text'  name='gender' class='form-control' value={{emp.Gender}}><br>
+                        </div>
+
+
+                        <div class='md-3'>
+                            <label for='phone'>Phone : </label>
+                            <input type='text' id='phone' name='phone' class='form-control' value={{emp.Phone}}><br>
+                        </div>
+
+                        <div class='md-3'>
+                            <label for='name'>Locality : </label>
+                            <input type='text' name='locality' class='form-control' value={{emp.Locality}} required><br>
+                        </div>
+
+                         <div class='md-3'>
+                            <label for='name'>city : </label>
+                            <input type='text' name='city' class='form-control' value={{emp.City}} required><br>
+                        </div> 
+
+                         <div class='md-3'>
+                            <label for='name'>Upload Your Resume : </label>
+                            <a href="{{emp.Resume.url}}">{{emp.Resume}}</a><br>
+                            <div>
+                                <label> Update yor Resume :</label>
+                                <input type='file' name='resume'>
+                            </div>
+                        </div> 
+
+                        {% comment %} <div class='md-3'>
+                            <label for='phone'>State: </label>
+                            <input type='text'  name='salary' value ={{emp.State}} class='form-control' ><br>
+                        </div>  {% endcomment %}
+                
+                        <div class='md-3'>
+                            <label for='address'>Pin : </label>
+                            <input type='text'  name='pin' value ={{emp.Pin}} class='form-control' ><br>
+                        </div>
+
+                        
+
+                        <div class='md-3'>
+                            <label for='name'>Joining Date : </label>
+                            <input type='date'  name='join_date'  value={{emp.Joining_Date}}><br>
+                        </div>
+
+
+                        <div class='container  text-center my-3'>
+                            <button class='btn btn-primary'>
+                               Update Employee 
+                            </button><br> 
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

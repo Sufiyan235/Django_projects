@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class='container'>
+    <div class='row'>
+        <dic class='col-md-12'
+            <div class='card'>
+                <div class='card-body'>
+                    <form action="#" method="POST" style='padding:5px 10px 5px 10px' enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        <div class='md-3'>
+                            <label for='roll'>Employee Name : </label>
+                            <input type='text'  name='name' class='form-control' value={{details.Name}}><br>
+                        </div>
+
+                        <div class='md-3'>
+                            <label for='name'>Date of Birth : </label>
+                            <input type='text'  name='name' class='form-control' value={{details.DOB}}><br>
+                            
+                        </div><br>
+
+                        <div class='md-3'>
+                            <label for='email'>Email : </label>
+                            <input type='email' id='email' name='email' class='form-control' value={{details.Email}} required><br>
+                        </div>
+
+                        <div class='md-3'>
+                            <label for='phone'>Gender </label>
+                            <input type='text'  name='gender' class='form-control' value={{details.Gender}}><br>
+                            
+                        </div>
+
+
+                        <div class='md-3'>
+                            <label for='phone'>Phone : </label>
+                            <input type='text' id='phone' name='phone' class='form-control' value={{details.Phone}}><br>
+                        </div>
+
+                        <div class='md-3'>
+                            <label for='name'>Locality : </label>
+                            <input type='text' name='locality' class='form-control' value={{details.Locality}} ><br>
+                        </div>
+
+                        <div class='md-3'>
+                            <label for='name'> City </label>
+                            <input type='text' name='city' class='form-control' value={{details.City}}><br>
+                        </div>
+                        
+                       
+
+                        <div class='md-3'>
+                            <label for='phone'>Pin: </label>
+                            <input type='text'  name='pin' class='form-control' value={{details.Pin}} ><br>
+                        </div>
+
+                         <div class='md-3'>
+                            <label for='phone'>State : </label>
+                            <input type='text'  name='pin' class='form-control' value={{details.State}} ><br>
+                            
+                        </div><br>
+                
+
+                        <div class='md-3'>
+                            <label for='phone'>Upload Your Photo: </label>
+                            
+                            <img src="{{details.Profile_Photo.url}}">
+                        </div>
+
+                         <div class='md-3'>
+                            <label for='name'>Upload Your Resume : </label>
+                            <a href="{{details.Resume.url}} " > value={{details.Resume}} </a> 
+                            
+                        </div> <br>
+
+                        <div class='md-3'>
+                            <label for='name'>Joining Date : </label>
+                            <input type='text' name='join_date'   value={{details.Joining_Date}}><br>
+                        </div>
+
+
+                        <div class='container  text-center my-3'>
+                            <button class='btn btn-success '>
+                                <a href ="{% url 'home' %}">Back To Home</a>
+                            </button><br>
+                        </div>
+
+                      
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+

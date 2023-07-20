@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<center><h1 class='alert-danger'> Add Employee </h1></center>
+<div class='container'>
+    <div class='row'>
+        <dic class='col-md-12'>
+            <div class='card'>
+                <div class='card-body'>
+                    <form action="{% url 'add_emp' %}" method="POST" enctype="multipart/form-data" style='padding:5px 10px 5px 10px' >
+                        {% csrf_token %}
+
+                        <div class='md-3'>
+                            <label for='roll'>Employee Name : </label>
+                            <input type='text'  name='name' class='form-control' placeholder='Enter Your Name' required><br>
+                        </div>
+
+                        <div class='md-3'>
+                            <label for='name'>Date of Birth : </label>
+                            <input type='date' name='dob'   required><br>
+                        </div><br>
+
+                        <div class='md-3'>
+                            <label for='email'>Email : </label>
+                            <input type='email' id='email' name='email' class='form-control' placeholder='Enter Your Email' required><br>
+                        </div>
+
+                        <div class='md-3'>
+                            <label for='phone'>Gender </label>
+                            <input type='text'  name='gender' class='form-control' placeholder='Enter Gender'><br>
+                            
+                        </div>
+
+
+                        <div class='md-3'>
+                            <label for='phone'>Phone : </label>
+                            <input type='text' id='phone' name='phone' class='form-control' placeholder='Enter Your Phone Number'><br>
+                        </div>
+
+                        <div class='md-3'>
+                            <label for='name'>Locality : </label>
+                            <input type='text' name='locality' class='form-control' placeholder='Enter your locality' ><br>
+                        </div>
+
+                        <div class='md-3'>
+                            <label for='name'> City </label>
+                            <input type='text' name='city' class='form-control' placeholder='Enter City' required><br>
+                        </div>
+                        
+                       
+
+                        <div class='md-3'>
+                            <label for='phone'>Pin: </label>
+                            <input type='text'  name='pin' class='form-control'placeholder='Enter your pin code' ><br>
+                        </div>
+
+                         <div class='md-3'>
+                            <label for='phone'>State : </label>
+                            <select name='state' > State 
+                            <option  default={{emp.State}} > {{emp.State}}</option>
+                            </select>
+                        </div><br>
+                
+
+                        <div class='md-3'>
+                            <label for='phone'>Upload Your Photo: </label>
+                            <input type='file'  name='photo' ><br><br>
+                        </div>
+
+                         <div class='md-3'>
+                            <label for='name'>Upload Your Resume : </label>
+                            <input type='file' name='resume'  required><br>
+                        </div> <br>
+
+                        <div class='md-3'>
+                            <label for='name'>Joining Date : </label>
+                            <input type='date' name='join_date'   required><br>
+                        </div>
+
+
+                        <div class='container  text-center my-3'>
+                            <button class='btn btn-primary'>
+                                Add Employee
+                            </button><br>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
