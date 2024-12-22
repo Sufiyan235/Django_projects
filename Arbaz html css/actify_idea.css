@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    background: #d1d1d1;
+}
+
+.card_section{
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.myCard{
+    background: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 20rem;
+}
+
+.myCard> h3{
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+.myCard> h2{
+    font-size: 1.7rem;
+    border-top: 1px solid #a5a5a5;
+    border-bottom: 1px solid #a5a5a5;
+    padding: 0.5rem;
+    font-weight: 500;
+    margin: 1rem 0;
+}
+
+.myCard > p{
+    background: lightgrey;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-weight: 500;
+    width: max-content;
+    margin: 0 auto;
+    border: 25px;
+}
+
+.myCard > p > span{
+    padding: 0 5px;
+}
+
+.myCardImg{
+    width: 3rem;
+    height: 3rem;
+    margin: 0.5rem auto;
+    display: flex;
+    align-items: c;
+    justify-content: center;
+}
+
+.phase_status{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+}
+
+.mainbox{
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+.main_top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.phase> h3, .owner>h3{
+    font-size: 1rem;
+}
+
+.status> h3, .status> p{
+    font-size: 1rem;
+    text-align: end;
+}
+
+.Profileicon{
+    margin:0 10px;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+.home-search{
+    width: 20%;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    /* border: 2px solid #4e4e4e; */
+    /* outline-color:#374ffb; */
+    outline: none;
+
+
+}
+.profile_left{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.profile_img{
+    width: 3rem;
+    height: 3rem;
+}
+
+.owner >p{
+    font-size: 0.9rem;
+}

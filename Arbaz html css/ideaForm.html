@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Idea</title>
+
+  <link rel="stylesheet" href="./ideaForm.css"/>
+  </head>
+
+
+<body>
+    <form class="form" action="./" method="POST" enctype="multipart/form-data">
+        <div class="formTitle">Your Idea</div>
+        <p class="formDesc">
+            Please Provide Detailed Information on Your Idea
+        </p>
+        <div class="formItem">
+            <label for="ideaName" class="formLabel">Idea Name : <span class="asterix">*</span></label>
+            <input type="text" class="formInput  formInputError" name="ideaName" id="ideaName" placeholder="Enter the name of Your Idea" required>
+           
+        </div>
+        <div class="formItem">
+            <label for="Summary" class="formLabel">Summary : <span class="asterix">*</span></label>
+          <textarea class="formInput" name="Summary" rows="5" cols="100" placeholder="Describe your Idea" required></textarea>
+            
+        </div>
+        <div class="formItem">
+            <label for="Benifits" class="formLabel">Benifits : <span class="asterix">*</span></label>
+            <textarea class="formInput" name="Benifits" rows="7" cols="100" placeholder="List the Benifits of your Idea" required></textarea>
+            
+        </div>
+        <div class="formItem">
+            <label for="Mainpoints" class="formLabel">Main Points : <span class="asterix">*</span></label>
+            <textarea class="formInput" name="Benifits" rows="5" cols="100" placeholder="Discuss main points of your Idea" required></textarea>
+           
+        </div>
+        <br>
+        <div class="formItem">
+        <input type="file" name="fileUpload" id="fileUpload" placeholder="Hello"> 
+        <br>
+        <button type="submit" value="Upload">Submit</button>
+       </div>
+        <button class="formBtn" type="submit">Review</button>
+    </form>
+    <!-- <script src="./submitIdea.js"></script> -->
+</body>
